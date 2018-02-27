@@ -9,7 +9,7 @@ public class Main {
         System.out.println(Arrays.toString(arr));
         insertionDesc(arr);
         System.out.println(Arrays.toString(arr));
-        mergeSort(arr1, 0, arr1.length);
+        mergeSort(arr1, 0, arr1.length - 1);
         System.out.println(Arrays.toString(arr1));
     }
 
@@ -56,13 +56,13 @@ public class Main {
             L[i] = array[p + i];
         }
         for (int j = 0; j < n2; j++) {
-            R[j] = array[q + j];
+            R[j] = array[q + 1 + j];
         }
         L[n1] = 2147483647;
         R[n2] = 2147483647;
         int i = 0;
         int j = 0;
-        for (int k = p; k < r; k++) {
+        for (int k = p; k <= r; k++) {
             if (L[i] <= R[j]) {
                 array[k] = L[i];
                 i = i + 1;
