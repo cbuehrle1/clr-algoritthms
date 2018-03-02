@@ -4,14 +4,15 @@ public class Main {
     public static void main(String[] args) {
         int[] arr = {2, 5, 1, 3, 15, 7, 11, 8, 1, 9, 23, 17};
         int[] arr1 = {1186, 203, 1986, 687, 1720, 1545, 516, 778, 1872, 1053, 398, 1823, 1602, 1257, 1460, 1716, 100, 563, 1287, 109, 747, 996, 238, 1152, 1740, 909, 370, 425, 1938, 564, 1232, 1141, 1544, 1812, 258, 117, 246, 656, 1922, 862, 1703, 1832, 175, 1332, 1445, 975, 626, 553, 1688, 46};
-
+        int[] arr2 = {1186, 203, 1986, 687, 1720, 1545, 516, 778, 1872, 1053, 398, 1823, 1602, 1257, 1460, 1716, 100, 563, 1287, 109, 747, 996, 238, 1152, 1740, 909, 370, 425, 1938, 564, 1232, 1141, 1544, 1812, 258, 117, 246, 656, 1922, 862, 1703, 1832, 175, 1332, 1445, 975, 626, 553, 1688, 46};
         insertion(arr);
         System.out.println(Arrays.toString(arr));
         insertionDesc(arr);
         System.out.println(Arrays.toString(arr));
         comboSort(arr1, 0, arr1.length - 1);
-        mergeSort(arr1, 0, arr1.length - 1);
+        mergeSort(arr2, 0, arr2.length - 1);
         System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.toString(arr2));
     }
 
     public static void insertion(int[] array) {
