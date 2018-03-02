@@ -9,9 +9,8 @@ public class Main {
         System.out.println(Arrays.toString(arr));
         insertionDesc(arr);
         System.out.println(Arrays.toString(arr));
-//        mergeSort(arr1, 0, arr1.length - 1);
-//        System.out.println(Arrays.toString(arr1));
         comboSort(arr1, 0, arr1.length - 1);
+        mergeSort(arr1, 0, arr1.length - 1);
         System.out.println(Arrays.toString(arr1));
     }
 
@@ -76,6 +75,7 @@ public class Main {
 
     }
 
+
     private static void comboSort (int[] array, int p, int r) {
         if (r - p <= 64) {
             insertionCombo(array, p, r);
@@ -102,3 +102,5 @@ public class Main {
         }
     }
 }
+
+
