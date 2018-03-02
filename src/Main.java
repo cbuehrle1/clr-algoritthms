@@ -9,7 +9,9 @@ public class Main {
         System.out.println(Arrays.toString(arr));
         insertionDesc(arr);
         System.out.println(Arrays.toString(arr));
-        mergeSort(arr1, 0, arr1.length);
+//        mergeSort(arr1, 0, arr1.length - 1);
+//        System.out.println(Arrays.toString(arr1));
+        comboSort(arr1, 0, arr1.length - 1);
         System.out.println(Arrays.toString(arr1));
     }
 
@@ -56,13 +58,13 @@ public class Main {
             L[i] = array[p + i];
         }
         for (int j = 0; j < n2; j++) {
-            R[j] = array[q + j];
+            R[j] = array[q + 1 + j];
         }
         L[n1] = 2147483647;
         R[n2] = 2147483647;
         int i = 0;
         int j = 0;
-        for (int k = p; k < r; k++) {
+        for (int k = p; k <= r; k++) {
             if (L[i] <= R[j]) {
                 array[k] = L[i];
                 i = i + 1;
@@ -72,5 +74,31 @@ public class Main {
             }
         }
 
+    }
+
+    private static void comboSort (int[] array, int p, int r) {
+        if (r - p <= 64) {
+            insertionCombo(array, p, r);
+        }
+        else{
+            if (p < r) {
+                int q = (p + r) / 2;
+                comboSort(array, p, q);
+                comboSort(array, q + 1, r);
+                merge(array, p, q, r);
+            }
+        }
+    }
+
+    private static void insertionCombo (int[] array, int p, int r) {
+        for (int i = p; i <= r - p; i++) {
+            int key = array[i];
+            int j = i - 1;
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j];
+                j = j - 1;
+            }
+            array[j + 1] = key;
+        }
     }
 }
